@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+.player{
+    width:700px;
+    position: relative;
+    overflow:hidden;
+    margin:0;
+}
+
+.player:hover .player_controls{
+    transform: translateY(0);
+}
+
+.player_controls{
+    transform: translateY(100%) translateY(-5px);
+    transition: 0.4s;
+    position: absolute;
+    bottom:0;
+    width:100%;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.video{
+    width:100%;
+    display:block;
+}
+
+.progress_container{
+    width:100%;
+    height:10px;
+    border-radius: 3px;
+    background-color: rgba(206, 206, 206,0.5);
+    display: flex;
+}
+
+.progress_bar{
+    /* position: absolute;
+    top:0;
+    left:0; */
+    
+    height:10px;
+    border-radius: 3px;
+    background-color: #e27878;
+}
+
+.controllers{
+    margin: 5px 0px;   
+}
+
+#togglePlay{
+    background-color: transparent;
+    font-size:20px;
+    margin:0 7px;
+    border:none;
+    outline:none;
+    color:#e27878;
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+    background-color: transparent;
+    margin-left:10px;
+    
+}
+
+input[type=range]:focus{
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: rgba(255,255,255,0.8);
+  border-radius: 3px;
+  /* border: 0.2px solid rgba(1, 1, 1, 0); */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #e27878;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3.5px;
+  box-shadow:0 0 2px rgba(0,0,0,0.2);
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: rgba(255, 198, 198, 0.5);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0 0 1px rgba(13, 13, 13, 0);
+  background: #ffffff;
+  border-radius: 3px;
+  /* border: 0.2px solid rgba(1, 1, 1, 0); */
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0), 0 0 0 rgba(13, 13, 13, 0);
+  height: 15px;
+  width: 15px;
+  border-radius: 50px;
+  background: #e27878;
+  cursor: pointer;
+}
+
+.skip{
+    background-color: rgba(255,255,255,0.5);
+    border:none;
+    outline:none;
+    border-radius: 10px;
+    margin:0 5px;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <title>Day17: Sorting Band Names without articles</title>
+</head>
+<body>
+    <ul id="bands"></ul>
+    <script>
+        //array를 'the','a','an'은 무시하고 sort 할 것.
+        const bands = ['The Plot in You', 'The Devil Wears Prada', 'Pierce the Veil', 'Norma Jean', 'The Bled', 'Say Anything', 'The Midway State', 'We Came as Romans', 'Counterparts', 'Oh, Sleeper', 'A Skylit Drive', 'Anywhere But Here', 'An Old Dog'];
+        
+        const filter = (word) =>{
+           return word.replace(/^(the|an|a)/i,'').trim();
+        }
+        const sortedBands = bands.sort((a,b)=>{
+            if(filter(a) > filter(b)){
+                return 1;
+            } else {
+                return -1;
+            }
+        })
+        document.querySelector('#bands').innerHTML =
+            sortedBands.map(band=>{
+                return `<li>${band}</li>`
+            }).join('')
+    </script>
+</body>
+</html>

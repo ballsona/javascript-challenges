@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+    <title>Day12 : Key Sequence Detection(KONAMI CODE)</title>
+</head>
+<body>
+    <script>
+        const pressed =[];
+        const secretCode = 'sona';
+        window.addEventListener('keyup',(e)=>{
+            pressed.push(e.key);
+            pressed.splice(-secretCode.length-1, pressed.length-secretCode.length);
+            //pressed 길이가 secretCode보다 길어지는 순간부터 pressed[0]이 계속 제거된다. 
+            if(pressed.join('').includes(secretCode)){
+                console.log('wow');
+                cornify_add();
+            }
+            console.log(pressed);
+        })
+    </script>
+</body>
+</html>
+
